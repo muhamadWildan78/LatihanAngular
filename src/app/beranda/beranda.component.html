@@ -1,0 +1,19 @@
+<p>beranda works!</p>
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>categoryId</th>
+      <th>DepartmentId</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let id of Listcategory">
+    <td>{{ id.category_id }}</td>
+    <td>{{ id.department_id }}</td>
+    <td>{{ id.name }}</td>
+    <td>{{ id.description }}</td>
+  </tr>
+  </tbody>
+</table>
