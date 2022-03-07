@@ -17,6 +17,9 @@ const routes: Routes = [
   },
   {
     path: 'add' , component:AddctgrComponent
+  },
+  {
+    path: 'update/:id' , component:AddctgrComponent
   }
 ];
 

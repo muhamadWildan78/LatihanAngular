@@ -14,7 +14,22 @@ export class MasterService {
   ListCategory(): Observable<any>{
     return this.http.get(environment.baseUrl+'/list').pipe( map(data => data))
   }
-  saveCategory(data: Category ): Observable<any>{
-    return this.http.post(environment.baseUrl+'/input', data).pipe( map(data => data))
+
+
+  saveCategory(cate: Category ): Observable<any>{
+    let url = '/input';
+    return this.http.post(environment.baseUrl+url, cate)
+      .pipe( map(data => data))
+  }
+
+  updateCategory(cate: Category ): Observable<any>{
+    let url = '/update';
+    return this.http.post(environment.baseUrl+url, cate)
+      .pipe( map(data => data))
+  }
+
+  getCatById(id: number): Observable<any>{
+    return this.http.get(environment.baseUrl+'/findById/'+id)
+      .pipe( map(data => data))
   }
 }
