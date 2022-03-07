@@ -69,7 +69,7 @@ export class AddctgrComponent implements OnInit {
     }
     this.mast.updateCategory(category).subscribe({
       next: hasil =>{
-        alert('Update Berhasil')
+        alert('Update Berhasil yuhu')
         this.ruter.navigateByUrl("/list/" + category.category_id);
       },
       error: err => {
