@@ -3,3 +3,9 @@
   max-width: 680px;
   padding: 0 15px;
 }
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+span.error-block{
+  color: red;
+}

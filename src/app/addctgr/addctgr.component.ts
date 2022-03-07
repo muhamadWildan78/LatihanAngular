@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MasterService} from "../service/master.service";
 import {Category} from "../model/category.model";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -15,10 +15,10 @@ export class AddctgrComponent implements OnInit {
               private ruter: Router,
               private route: ActivatedRoute ) {
     this.formAdd = this.formBuild.group({
-      'category_id': [null],
-      'department_id': [null],
-      'name': [null],
-      'description': [null]
+      'category_id': new FormControl(null, [Validators.required]),
+      'department_id': new FormControl(null, [Validators.required]),
+      'name': new FormControl(null, [Validators.required]),
+      'description': new FormControl(null, [Validators.required])
     })
   }
 
