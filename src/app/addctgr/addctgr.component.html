@@ -1,46 +1,56 @@
 <div class="m-3">
   <form [formGroup]="formAdd">
     <div class="form-group">
-      <label for="categoryId">category_id</label>
+      <label for="categoryId">Category id</label>
       <input type="text" class="form-control" id="categoryId" aria-describedby="emailHelp" placeholder="Masukan Category ID" formControlName="category_id">
     </div>
     <span *ngIf="!formAdd.get('category_id')?.valid && formAdd.get('category_id')?.touched"
           class="error-block">
-      category ID Wajib diisi
+        <span *ngIf="!formAdd.get('category_id')?.errors?.['minlength']"
+              class="error-block">
+              Panjang Minimal 1
+        </span>
     </span>
 
     <div class="form-group">
-      <label for="departmentId">department_id</label>
+      <label for="departmentId">Department id</label>
       <input type="text" class="form-control" id="departmentId" aria-describedby="emailHelp" placeholder="Masukan Department ID" formControlName="department_id">
     </div>
     <span *ngIf="!formAdd.get('department_id')?.valid && formAdd.get('department_id')?.touched"
           class="error-block">
-      Department ID wajib diisi
+        <span *ngIf="!formAdd.get('department_id')?.errors?.['minlength']"
+              class="error-block">
+              Panjang Minimal 1
+        </span>
     </span>
 
     <div class="form-group">
-      <label for="name">name</label>
+      <label for="name">Nama</label>
       <textarea class="form-control" id="name" aria-describedby="emailHelp" placeholder="Masukan Nama" formControlName="name"></textarea>
     </div>
     <span *ngIf="!formAdd.get('name')?.valid && formAdd.get('name')?.touched"
           class="error-block">
-     Nama wajib diisi
+        <span *ngIf="!formAdd.get('name')?.errors?.['minlength']"
+              class="error-block">
+              Panjang Minimal 3
+        </span>
     </span>
 
     <div class="form-group">
       <label for="description">Keterangan</label>
-      <textarea class="form-control" id="description" aria-describedby="emailHelp" placeholder="Input Description" formControlName="description"></textarea>
+      <textarea class="form-control" id="description" aria-describedby="emailHelp" placeholder="Masukan Keterangan" formControlName="description"></textarea>
     </div>
     <span *ngIf="!formAdd.get('description')?.valid && formAdd.get('description')?.touched"
           class="error-block">
-      Keterangan wajib diisi
+        <span *ngIf="!formAdd.get('description')?.errors?.['description']"
+              class="error-block">
+              Panjang Minimal 3
+        </span>
     </span>
-<!--    -->
-<!--    <div class="form-check">-->
-<!--      <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-<!--      <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
-<!--    </div>-->
-    <button type="submit" (click)="simpan()" class="btn btn-primary">Simpan</button>
-    <button type="submit" (click)="update()" class="btn btn-primary">Update</button>
+    <br>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" type="submit" (click)="simpan()">Simpan</button>
+      <button class="btn btn-primary" type="submit" (click)="update()" >Updte</button>
+    </div>
   </form>
 </div>

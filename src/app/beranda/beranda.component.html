@@ -2,10 +2,10 @@
 <table class="table table-responsive">
   <thead>
     <tr>
-      <th>categoryId</th>
-      <th>DepartmentId</th>
-      <th>Name</th>
-      <th>Description</th>
+      <th>Id Category</th>
+      <th>Id Department</th>
+      <th>Nama</th>
+      <th>Keterangan</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +14,9 @@
     <td>{{ id.department_id }}</td>
     <td>{{ id.name }}</td>
     <td>{{ id.description }}</td>
+    <td>
+      <button  class="btn btn-dark" routerLink="/update/{{id.category_id}}">Update</button>
+    </td>
   </tr>
   </tbody>
 </table>

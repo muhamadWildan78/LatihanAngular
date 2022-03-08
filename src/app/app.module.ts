@@ -9,6 +9,7 @@ import { MinumanComponent } from './minuman/minuman.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AddctgrComponent } from './addctgr/addctgr.component';
+import {ToastNoAnimationModule, ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AddctgrComponent } from './addctgr/addctgr.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastNoAnimationModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
